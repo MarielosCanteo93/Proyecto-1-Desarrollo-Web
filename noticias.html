@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Noticias - Alamedas de Santa Ana</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="noticias">
+<!-- Header -->
+  <header class="glass-effect rounded-b-2xl shadow-lg mb-8">
+    <div class="container mx-auto px-6 py-8">
+      <div class="text-center">
+        <img src="https://placehold.co/200x60/2563eb/white?text=Alamedas+Santa+Ana" alt="Logo Residencial Alamedas de Santa Ana - Edificios modernos con áreas verdes" class="mx-auto mb-4 h-16">
+        <h1 class="text-3xl font-bold text-gray-800">Portal de Noticias</h1>
+        <p class="text-gray-600">Mantente informado sobre las últimas novedades</p>
+      </div>
+    </div>
+  </header>
+
+    <!-- Botón menú -->
+    <button id="menuToggle" class="boton">☰ Menú</button>
+    <div id="menu">
+      <ul>
+        <li>
+          <a href="index.html">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-fill" viewBox="0 0 16 16">
+              <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293z"/>
+              <path d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293z"/>
+            </svg>
+            Inicio
+          </a>
+        </li>
+        <li>
+          <a href="calendario.html">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar-date" viewBox="0 0 16 16">
+              <path d="M6.445 11.688V6.354h-.633A13 13 0 0 0 4.5 7.16v.695c.375-.257.969-.62 1.258-.777h.012v4.61zm1.188-1.305c.047.64.594 1.406 1.703 1.406 1.258 0 2-1.066 2-2.871 0-1.934-.781-2.668-1.953-2.668-.926 0-1.797.672-1.797 1.809 0 1.16.824 1.77 1.676 1.77.746 0 1.23-.376 1.383-.79h.027c-.004 1.316-.461 2.164-1.305 2.164-.664 0-1.008-.45-1.05-.82zm2.953-2.317c0 .696-.559 1.18-1.184 1.18-.601 0-1.144-.383-1.144-1.2 0-.823.582-1.21 1.168-1.21.633 0 1.16.398 1.16 1.23"/>
+              <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z"/>
+            </svg>
+            Calendario
+          </a>
+        </li>
+        <li>
+         <a href="consulta.html">
+	     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+  	     <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+	     </svg>
+         Consulta
+         </a>
+        </li>
+        <li>
+          <a href="gallery.html">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-image" viewBox="0 0 16 16">
+              <path d="M8.002 5.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"/>
+              <path d="M12 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2M3 2a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v8l-2.083-2.083a.5.5 0 0 0-.76.063L8 11 5.835 9.7a.5.5 0 0 0-.611.076L3 12z"/>
+            </svg>
+            Galería
+          </a>
+        </li>
+      </ul>
+    </div>
+
+
+<!-- Main Content -->
+  <div class="container mx-auto px-4 pb-12">
+    <div class="max-w-6xl mx-auto">
+      <!-- Form Section -->
+      <div class="glass-effect rounded-2xl p-8 mb-12 animate-fade-in">
+        <div class="text-center mb-8">
+          <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <i class="fas fa-newspaper text-3xl text-blue-600"></i>
+          </div>
+          <h2 class="text-2xl font-bold text-gray-800 mb-2">Publicar Nueva Noticia</h2>
+          <p class="text-gray-600">Comparte información importante con la comunidad</p>
+        </div>
+
+        <form id="agregar-noticia-form" class="space-y-6">
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="floating-label">
+              <input type="text" id="titulo-noticia" name="titulo-noticia" placeholder=" " maxlength="100">
+              <label for="titulo-noticia">
+                <i class="fas fa-heading mr-2"></i>Título de la Noticia *
+              </label>
+              <div class="character-count mt-2 text-right" id="titulo-count">0/100</div>
+            </div>
+
+            <div class="floating-label">
+              <input type="date" id="fecha-noticia" name="fecha-noticia" placeholder=" ">
+              <label for="fecha-noticia">
+                <i class="far fa-calendar-alt mr-2"></i>Fecha de Publicación *
+              </label>
+            </div>
+          </div>
+
+          <div class="floating-label">
+            <textarea id="contenido-noticia" name="contenido-noticia" placeholder=" " maxlength="1000"></textarea>
+            <label for="contenido-noticia">
+              <i class="fas fa-align-left mr-2"></i>Contenido de la Noticia *
+            </label>
+            <div class="character-count mt-2 text-right" id="contenido-count">0/1000</div>
+          </div>
+
+          <div class="text-center">
+            <button type="submit" class="btn-primary">
+              <i class="fas fa-paper-plane mr-2"></i>Publicar Noticia
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- News List Section -->
+      <div class="glass-effect rounded-2xl p-8 animate-fade-in">
+        <div class="flex items-center justify-between mb-8">
+          <div>
+            <h2 class="text-2xl font-bold text-gray-800">Noticias Publicadas</h2>
+            <p class="text-gray-600">Lista de todas las noticias de la comunidad</p>
+          </div>
+          <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium" id="news-count">0 noticias</span>
+        </div>
+
+        <div id="lista-noticias" class="space-y-6">
+          <!-- Noticias se agregarán aquí dinámicamente -->
+          <div class="text-center py-12 text-gray-500" id="empty-state">
+            <i class="fas fa-newspaper text-4xl mb-4 opacity-50"></i>
+            <p>No hay noticias publicadas aún</p>
+            <p class="text-sm">¡Sé el primero en compartir una noticia!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Success Toast -->
+  <div id="success-toast" class="fixed top-4 right-4 glass-effect rounded-xl p-4 shadow-lg transform translate-x-full transition-transform duration-300">
+    <div class="flex items-center">
+      <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-3">
+        <i class="fas fa-check text-green-600"></i>
+      </div>
+      <div>
+        <p class="font-semibold text-green-800">¡Éxito!</p>
+        <p class="text-sm text-green-600">Noticia publicada correctamente</p>
+      </div>
+    </div>
+  </div>
+
+      <footer>
+        <p>&copy; 2025 Calendario de Actividades - Alamedas de Santa Ana | Todos los derechos reservados</p>
+    </footer>
+  <script src="js/menu.js"></script>
+    <script src="./vendor/sqljs/sql-wasm.js"></script>
+  <script src="js/db.js"></script>
+  <script src="js/noticias.js"></script>
+  <script>
+    // Inicializar base al cargar noticias
+    document.addEventListener("DOMContentLoaded", async () => {
+      if (typeof initDB === "function") {
+        await initDB();
+        console.log("Base de datos inicializada en Noticias ✅");
+      }
+    });
+  </script>
+</body>
+</html>

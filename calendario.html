@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendario de Actividades - Alamedas de Santa Ana</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="calendario">
+    <header>
+        <h1 class="text-3xl font-bold">Calendario de Actividades</h1>
+        <div class="flex justify-center flex-wrap gap-3 mt-4">
+            <button id="modoOscuro" class="boton bg-gray-800 text-white px-4 py-2 rounded">Modo Oscuro</button>
+            <button id="exportar" class="boton bg-blue-600 text-white px-4 py-2 rounded">Exportar Eventos</button>
+            <button id="importar" class="boton bg-green-600 text-white px-4 py-2 rounded">Importar Eventos</button>
+        </div>
+    </header>
+
+      <!-- BOTÓN Y MENÚ LATERAL -->
+ <!-- Botón menú -->
+    <button id="menuToggle" class="boton">☰ Menú</button>
+    <div id="menu">
+      <ul>
+        <li>
+          <a href="index.html">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-fill" viewBox="0 0 16 16">
+              <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293z"/>
+              <path d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293z"/>
+            </svg>
+            Inicio
+          </a>
+        </li>
+         <li>
+          <a href="Noticias.html">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-newspaper" viewBox="0 0 16 16">
+              <path d="M0 2.5A1.5 1.5 0 0 1 1.5 1h11A1.5 1.5 0 0 1 14 2.5v10.528c0 .3-.05.654-.238.972h.738a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 1 1 0v9a1.5 1.5 0 0 1-1.5 1.5H1.497A1.497 1.497 0 0 1 0 13.5zM12 14c.37 0 .654-.211.853-.441.092-.106.147-.279.147-.531V2.5a.5.5 0 0 0-.5-.5h-11a.5.5 0 0 0-.5.5v11c0 .278.223.5.497.5z"/>
+              <path d="M2 3h10v2H2zm0 3h4v3H2zm0 4h4v1H2zm0 2h4v1H2zm5-6h2v1H7zm3 0h2v1h-2zM7 8h2v1H7zm3 0h2v1h-2zm-3 2h2v1H7zm3 0h2v1h-2zm-3 2h2v1H7zm3 0h2v1H7z"/>
+            </svg>
+            Noticias
+          </a>
+        </li>
+        <li>
+         <a href="consulta.html">
+	     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+  	     <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+	     </svg>
+         Consulta
+         </a>
+        </li>
+        <li>
+          <a href="gallery.html">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-image" viewBox="0 0 16 16">
+              <path d="M8.002 5.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"/>
+              <path d="M12 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2M3 2a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v8l-2.083-2.083a.5.5 0 0 0-.76.063L8 11 5.835 9.7a.5.5 0 0 0-.611.076L3 12z"/>
+            </svg>
+            Galería
+          </a>
+        </li>
+      </ul>
+    </div>
+
+
+      <!-- Controles del calendario -->
+  <section class="mt-8 max-w-6xl mx-auto px-4">
+    <div id="selectorMesAnio" class="cal-header-controls glass mb-4 p-3 rounded-lg">
+      <div class="flex flex-col lg:flex-row items-center justify-between gap-3">
+        <div class="flex items-center flex-wrap gap-2">
+          <button id="prevMonth" class="btn">◀</button>
+
+          <label for="mes" class="font-semibold">Mes:</label>
+          <select id="mes" class="select"></select>
+
+          <label for="anio" class="font-semibold">Año:</label>
+          <select id="anio" class="select"></select>
+
+          <button id="nextMonth" class="btn">▶</button>
+          <button id="hoy" class="btn">Hoy</button>
+        </div>
+
+        <div class="text-sm text-white/90">
+          <span id="resumenSeleccion"></span>
+        </div>
+      </div>
+    </div>
+      <!-- Encabezados de días -->
+    <div class="grid grid-cols-7 gap-2 mt-2">
+      <div class="weekday">Domingo</div>
+      <div class="weekday">Lunes</div>
+      <div class="weekday">Martes</div>
+      <div class="weekday">Miércoles</div>
+      <div class="weekday">Jueves</div>
+      <div class="weekday">Viernes</div>
+      <div class="weekday">Sábado</div>
+    </div>
+
+    <!-- Calendario -->
+    <div id="calendario" class="calendar-grid"></div>
+
+    <!-- Panel eventos del día -->
+    <div class="detalleEvento mt-4 p-3 rounded glass">
+      <div class="flex items-center justify-between mb-2">
+        <h2 class="text-lg font-semibold">Eventos del día</h2>
+        <button id="agregarEventoBtn" class="btn-secondary hidden">+ Agregar</button>
+      </div>
+      <div id="eventosDelDia">Seleccione un día para ver los eventos.</div>
+    </div>
+  </section>
+
+  <footer class="text-center mt-8 p-4 bg-gray-800 text-white">
+    <p>&copy; 2025 Calendario de Actividades - Alamedas de Santa Ana | Todos los derechos reservados</p>
+  </footer>
+
+  <!-- Modal Detalle/Edición de Evento -->
+  <div id="eventModal" class="modal-overlay hidden">
+    <div class="modal-card">
+      <div class="flex items-center justify-between mb-3">
+        <h3 id="eventModalTitle" class="text-xl font-bold">Evento</h3>
+        <button id="closeEventModal" class="close-x">×</button>
+      </div>
+
+      <div class="space-y-3">
+        <div>
+          <label class="label">Fecha</label>
+          <input id="eventFecha" type="date" class="input" />
+        </div>
+        <div>
+          <label class="label">Título</label>
+          <input id="eventTitulo" type="text" class="input" placeholder="Título del evento"/>
+        </div>
+        <div>
+          <label class="label">Descripción</label>
+          <textarea id="eventDescripcion" class="textarea" placeholder="Detalles, notas, ubicación..."></textarea>
+        </div>
+      </div>
+
+      <div class="flex items-center justify-between mt-4">
+        <button id="deleteEvent" class="btn-danger hidden">Eliminar</button>
+        <div class="ml-auto flex gap-2">
+          <button id="cancelEvent" class="btn">Cancelar</button>
+          <button id="saveEvent" class="btn-primary">Guardar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Import/Export -->
+  <div id="importExportModal" class="modal-overlay hidden">
+    <div class="modal-card">
+      <div class="flex items-center justify-between mb-3">
+        <h3 id="importExportTitle" class="text-xl font-bold">Exportar Eventos</h3>
+        <button id="closeImportExport" class="close-x">×</button>
+      </div>
+      <textarea id="importExportTextarea" class="textarea h-56" placeholder=""></textarea>
+      <div class="flex justify-end gap-2 mt-3">
+        <button id="importExportCancel" class="btn">Cancelar</button>
+        <button id="importExportAction" class="btn-primary">Confirmar</button>
+      </div>
+    </div>
+  </div>
+
+    <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; © 2025 Alamedas de Santa Ana | Todos los derechos reservados</p>
+  </footer>
+  
+   <!-- Scripts -->
+  <script src="js/menu.js"></script>
+  <script src="./vendor/sqljs/sql-wasm.js"></script>
+  <script src="js/db.js"></script>
+  <script src="js/calendario.js"></script>
+
+  <script>
+    // Inicializar DB al cargar calendario
+    document.addEventListener("DOMContentLoaded", async () => {
+      if (typeof initDB === "function") {
+        await initDB();
+        console.log("Base de datos inicializada en Calendario ✅");
+      }
+    });
+  </script>
+</body>
+</html>

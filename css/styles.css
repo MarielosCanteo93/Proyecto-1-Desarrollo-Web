@@ -1,0 +1,891 @@
+/* =========================
+   Estilos generales
+========================= */
+
+/* Reset y fuente general */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', Arial, sans-serif;
+    color: #2c3e50;
+    position: relative;
+    min-height: 100vh;
+    overflow-x: hidden;
+    background: #f5f6fa;
+}
+
+/* =========================
+   Fondos por página
+========================= */
+
+/* Página principal */
+body.index::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../img/Residencial3.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: blur(8px);
+    z-index: -1;
+}
+
+/* Página de consulta (corregido para soportar .consulta y .consultas) */
+body.consulta::before,
+body.consultas::before {
+content: ""; 
+position: absolute; 
+top: 0; left: 0; 
+width: 100%; 
+height: 100%; 
+background-image: url("../img/consultas3.jpg"); 
+background-size: cover; 
+background-position: center; 
+background-repeat: no-repeat; 
+filter: blur(4px); z-index: -1; 
+}
+
+
+
+
+/* Página calendario */
+body.calendario::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: none; /* sin imagen estática */
+    z-index: -1;
+}
+
+/* Fondo de imagen para calendario */
+body.calendario::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../img/Calendario2.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: blur(6px); /* puedes ajustar el difuminado */
+    z-index: -1;
+}
+
+/* =========================
+   Encabezado
+========================= */
+header {
+    text-align: center;
+    padding: 40px 20px;
+    position: relative;
+    z-index: 1;
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+
+header h1 {
+    color: white;
+    font-size: 36px;
+    margin: 0;
+}
+
+header p {
+    color: white;
+    font-size: 18px;
+    margin: 5px 0 0 0;
+}
+
+/* (Opcional) Preservar header verde en la página de consultas si usas <header class="header"> */
+body.consultas header.header {
+    background: #00695c;
+}
+
+/* =========================
+   Menú de navegación
+========================= */
+nav {
+    background-color: #1c2b3a;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px;
+    position: relative;
+    z-index: 1;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s, border-bottom 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+    color: #0d6efd;
+    border-bottom: 2px solid #0d6efd;
+}
+
+/* =========================
+   Contenedor principal
+========================= */
+main {
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.accesos {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.accesos h2 {
+    font-size: 22px;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+/* =========================
+   Hexágonos estilo panal
+========================= */
+.hex-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-top: 60px;
+}
+
+.hex:nth-child(even) {
+    margin-top: 45px;
+}
+
+.hex {
+    position: relative;
+    width: 200px;
+    height: 150px;
+    background: #1c2b3a;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s;
+    clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+}
+
+.hex:hover {
+    background: #0d6efd;
+    transform: scale(1.05);
+}
+
+.hex i {
+    font-size: 40px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.hex span {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* =========================
+   Títulos
+========================= */
+h2 {
+    text-align: center;
+    margin-top: 40px;
+    font-weight: bold;
+    color: white;
+}
+
+/* =========================
+   Estilos de calendario
+========================= */
+#calendario {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    margin-top: 20px;
+}
+
+.dia {
+    border: 1px solid #ccc;
+    padding: 10px;
+    min-height: 80px;
+    position: relative;
+    cursor: pointer;
+    background-color: white;
+    transition: background-color 0.3s;
+}
+
+.dia:hover {
+    background-color: #ecf0f1;
+}
+
+.evento {
+    display: block;
+    padding: 5px;
+    margin-top: 5px;
+    border-radius: 3px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.detalleEvento {
+    margin-top: 20px;
+    background-color: #f1f1f1;
+    padding: 10px;
+    border-radius: 5px;
+    min-height: 50px;
+}
+
+#selectorMesAnio {
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* =========================
+   Modo oscuro
+========================= */
+.modo-oscuro {
+    background-color: #333;
+    color: white;
+}
+
+.modo-oscuro .dia {
+    background-color: #444;
+    border-color: #555;
+}
+
+.modo-oscuro .dia:hover {
+    background-color: #555;
+}
+
+/* =========================
+   Botones
+========================= */
+.boton {
+    padding: 10px 15px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.boton:hover {
+    background-color: #3498db;
+    color: white;
+}
+
+/* =========================
+   Lista de eventos
+========================= */
+#eventosDelDia {
+    margin-top: 20px;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.evento-lista {
+    padding: 5px;
+    border-bottom: 1px solid #ccc;
+    cursor: pointer;
+}
+
+.evento-lista:hover {
+    background-color: #ecf0f1;
+}
+
+.nombre-dia {
+    font-weight: bold;
+    text-align: center;
+}
+
+
+.evento-lista {
+    padding: 5px;
+    border-bottom: 1px solid #ccc;
+    cursor: pointer;
+}
+
+.evento-lista:hover {
+    background-color: #ecf0f1;
+}
+
+.nombre-dia {
+    font-weight: bold;
+    text-align: center;
+}
+
+/* =========================
+   Menú lateral ocultable (UNIFICADO)
+   -> Usar SIEMPRE .active para abrir/cerrar
+========================= */
+#menu {
+    position: fixed;
+    top: 0;
+    left: -250px; /* oculto por defecto */
+    width: 250px;
+    height: 100%;
+    background-color: rgba(28, 43, 58, 0.95);
+    box-shadow: 2px 0 5px rgba(0,0,0,0.5);
+    transition: left 0.3s;
+    z-index: 1000;
+    padding-top: 60px;
+}
+
+#menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#menu ul li {
+    padding: 15px 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+#menu ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#menu ul li a:hover {
+    color: #0d6efd;
+}
+
+#menuToggle {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1100;
+    background-color: #0d6efd;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+#menuToggle:hover {
+    background-color: #0056b3;
+}
+
+#menu.active {
+    left: 0;
+}
+/* CSS */
+#menu {
+    margin-bottom: 20px; /* Espacio debajo del menú */
+}
+
+/* =========================
+   Noticias
+========================= */
+:root {
+  --primary: #2563eb;
+  --primary-dark: #1d4ed8;
+  --secondary: #64748b;
+  --success: #10b981;
+  --danger: #ef4444;
+  --warning: #f59e0b;
+  --light: #f8fafc;
+  --dark: #1e293b;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+  min-height: 100vh;
+}
+
+.glass-effect {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.floating-label {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.floating-label input,
+.floating-label textarea {
+  width: 100%;
+  padding: 1rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: transparent;
+}
+
+.floating-label textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.floating-label label {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  color: #64748b;
+  transition: all 0.3s ease;
+  pointer-events: none;
+  font-size: 1rem;
+}
+
+.floating-label input:focus,
+.floating-label textarea:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+  outline: none;
+}
+
+.floating-label input:focus + label,
+.floating-label textarea:focus + label,
+.floating-label input:not(:placeholder-shown) + label,
+.floating-label textarea:not(:placeholder-shown) + label {
+  top: -0.5rem;
+  left: 0.75rem;
+  font-size: 0.875rem;
+  color: var(--primary);
+  background: white;
+  padding: 0 0.5rem;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  color: white;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.news-card {
+  transition: all 0.3s ease;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.news-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.news-date {
+  color: var(--secondary);
+  font-size: 0.875rem;
+}
+
+.news-title {
+  font-weight: 600;
+  color: var(--dark);
+  font-size: 1.25rem;
+}
+
+.news-content {
+  color: var(--secondary);
+  line-height: 1.6;
+}
+
+.delete-btn {
+  color: var(--danger);
+  transition: all 0.3s ease;
+}
+
+.delete-btn:hover {
+  transform: scale(1.1);
+  color: #dc2626;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.character-count {
+  font-size: 0.875rem;
+  color: var(--secondary);
+}
+
+.character-count.warning {
+  color: var(--warning);
+}
+
+.character-count.danger {
+  color: var(--danger);
+}
+
+/* =========================
+   Overrides & mejoras UI
+   ========================= */
+
+/* Fuente general */
+body {
+  font-family: 'Poppins', Arial, sans-serif;
+}
+
+/* Tarjeta de vidrio sutil */
+.glass {
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.35);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+/* Controles cabecera calendario */
+.cal-header-controls .btn,
+#agregarEventoBtn.btn-secondary {
+  padding: 0.5rem 0.9rem;
+  border-radius: 0.6rem;
+  border: none;
+  cursor: pointer;
+  transition: transform .15s ease, box-shadow .2s ease, background .2s ease, color .2s ease;
+  background: #2563eb;
+  color: #fff;
+}
+.cal-header-controls .btn:hover,
+#agregarEventoBtn.btn-secondary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(37,99,235,0.35);
+  background: #1d4ed8;
+}
+
+.btn {
+  padding: 0.5rem 0.9rem;
+  border-radius: 0.6rem;
+  border: none;
+  cursor: pointer;
+  background: #e5e7eb;
+}
+.btn:hover { background: #d1d5db; }
+
+.btn-primary {
+  padding: 0.6rem 1rem;
+  border-radius: 0.6rem;
+  border: none;
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform .15s ease, box-shadow .2s ease;
+}
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 22px rgba(37, 99, 235, 0.35);
+}
+.btn-danger, .btn-mini-danger {
+  background: #ef4444;
+  color: #fff;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.8rem;
+  cursor: pointer;
+}
+.btn-danger:hover, .btn-mini-danger:hover { background: #dc2626; }
+
+.btn-mini {
+  background: #e5e7eb;
+  color: #111827;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.35rem 0.6rem;
+  cursor: pointer;
+}
+.btn-mini:hover { background: #d1d5db; }
+
+.select {
+  border: 1px solid #cbd5e1;
+  background: #fff;
+  padding: 0.35rem 0.6rem;
+  border-radius: 0.5rem;
+}
+
+/* Grid del calendario */
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.weekday {
+  text-align: center;
+  font-weight: 600;
+  color: #475569;
+  background: rgba(255,255,255,0.9);
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 8px 0;
+}
+
+/* Celda del día */
+.dia {
+  border: 1px solid #e5e7eb;
+  padding: 10px;
+  min-height: 110px;
+  border-radius: 12px;
+  background: #ffffff;
+  transition: border-color .2s ease, box-shadow .2s ease, transform .08s ease;
+  position: relative;
+  cursor: pointer;
+}
+.dia:hover {
+  border-color: #2563eb;
+  box-shadow: 0 8px 18px rgba(37, 99, 235, 0.15);
+  transform: translateY(-1px);
+}
+
+.dia-vacio {
+  background: #f8fafc;
+  border-style: dashed;
+  cursor: default;
+}
+
+.dia-numero {
+  font-weight: 700;
+  margin-bottom: 4px;
+  color: #111827;
+}
+
+.dia-actual {
+  border-color: #fb923c !important;
+  background: linear-gradient(135deg, #ffedd5 0%, #fed7aa 100%) !important;
+}
+
+/* Chips de eventos dentro de la celda */
+.evento-chip {
+  background: #dbeafe;
+  color: #1e40af;
+  font-size: 0.78rem;
+  border-radius: 8px;
+  padding: 5px 8px;
+  margin-top: 6px;
+  border-left: 3px solid #2563eb;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.evento-chip:hover {
+  background: #bfdbfe;
+}
+
+/* Contador de eventos por día */
+.event-count {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: #2563eb;
+  color: #fff;
+  width: 24px;
+  height: 24px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+/* Lista en panel "Eventos del día" */
+.evento-lista-item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px;
+  align-items: start;
+  padding: 10px;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  background: #fff;
+}
+.evento-lista-item + .evento-lista-item { margin-top: 8px; }
+
+/* Modales */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+.modal-card {
+  width: 95%;
+  max-width: 520px;
+  background: #ffffff;
+  color: #111827;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+}
+.close-x {
+  background: transparent;
+  border: none;
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+  color: #6b7280;
+}
+.close-x:hover { color: #ef4444; }
+
+/* Inputs modal */
+.label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+.input, .textarea {
+  width: 100%;
+  border: 2px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 10px 12px;
+  outline: none;
+  background: #fff;
+}
+.input:focus, .textarea:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37,99,235,0.1);
+}
+.textarea { min-height: 120px; resize: vertical; }
+
+/* Modo oscuro (se mantiene tu clase) */
+.modo-oscuro {
+  background-color: #111827;
+  color: #e5e7eb;
+}
+.modo-oscuro header::before {
+  background-color: rgba(0,0,0,0.6);
+}
+.modo-oscuro .weekday {
+  background: rgba(31,41,55,0.9);
+  border-color: #374151;
+  color: #cbd5e1;
+}
+.modo-oscuro .calendar-grid .dia {
+  background: #1f2937;
+  border-color: #374151;
+}
+.modo-oscuro .dia:hover {
+  border-color: #60a5fa;
+  box-shadow: 0 8px 18px rgba(96,165,250,0.15);
+}
+.modo-oscuro .dia-vacio {
+  background: #111827;
+  border-color: #374151;
+}
+.modo-oscuro .dia-numero { color: #e5e7eb; }
+.modo-oscuro .evento-chip {
+  background: #1e40af;
+  color: #dbeafe;
+  border-left-color: #60a5fa;
+}
+.modo-oscuro .event-count {
+  background: #60a5fa;
+  color: #0b1020;
+}
+.modo-oscuro .modal-card {
+  background: #1f2937;
+  color: #e5e7eb;
+}
+.modo-oscuro .input, .modo-oscuro .textarea {
+  background: #111827;
+  border-color: #374151;
+  color: #e5e7eb;
+}
+.modo-oscuro .evento-lista-item {
+  background: #1f2937;
+  border-color: #374151;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .dia { min-height: 100px; padding: 8px; }
+  .calendar-grid { gap: 6px; }
+  .weekday { font-size: 0.9rem; padding: 6px 0; }
+}
+
+/* Mantener tu menú tal cual, solo aseguramos transición suave */
+#menu {
+  transition: left .3s ease;
+}
+
+
+
+/*Styless de gallery *//* Lightbox */
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    justify-content: center; /* centra horizontal */
+    align-items: center;     /* centra vertical */
+}
+.lightbox.active {
+    display: flex;
+    opacity: 1;
+}
+.lightbox-content {
+    max-width: 90%;
+    max-height: 90%;
+    position: relative;
+}
+.lightbox img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}

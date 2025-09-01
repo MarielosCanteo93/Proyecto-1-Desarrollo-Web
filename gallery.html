@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria - Alamedas de Santa Ana</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+   <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Fuente Google moderna -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gray-50 font-sans">
+   <section class="w-full max-w-3xl bg-white rounded-lg shadow-md p-8 mx-auto mt-8">
+    <h1 class="text-2xl font-extrabold text-gray-900 mb-1 text-center">Residencial Alamedas de Santa Ana</h1>
+
+    <!-- Botón menú -->
+    <button id="menuToggle" class="boton">☰ Menú</button>
+    <div id="menu">
+      <ul>
+        <li>
+          <a href="index.html">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-fill" viewBox="0 0 16 16">
+              <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293z"/>
+              <path d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293z"/>
+            </svg>
+            Inicio
+          </a>
+        </li>
+        <li>
+          <a href="Noticias.html">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-newspaper" viewBox="0 0 16 16">
+              <path d="M0 2.5A1.5 1.5 0 0 1 1.5 1h11A1.5 1.5 0 0 1 14 2.5v10.528c0 .3-.05.654-.238.972h.738a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 1 1 0v9a1.5 1.5 0 0 1-1.5 1.5H1.497A1.497 1.497 0 0 1 0 13.5zM12 14c.37 0 .654-.211.853-.441.092-.106.147-.279.147-.531V2.5a.5.5 0 0 0-.5-.5h-11a.5.5 0 0 0-.5.5v11c0 .278.223.5.497.5z"/>
+              <path d="M2 3h10v2H2zm0 3h4v3H2zm0 4h4v1H2zm0 2h4v1H2zm5-6h2v1H7zm3 0h2v1h-2zM7 8h2v1H7zm3 0h2v1h-2zm-3 2h2v1H7zm3 0h2v1h-2zm-3 2h2v1H7zm3 0h2v1H7z"/>
+            </svg>
+            Noticias
+          </a>
+        </li>
+        <li>
+          <a href="calendario.html">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar-date" viewBox="0 0 16 16">
+              <path d="M6.445 11.688V6.354h-.633A13 13 0 0 0 4.5 7.16v.695c.375-.257.969-.62 1.258-.777h.012v4.61zm1.188-1.305c.047.64.594 1.406 1.703 1.406 1.258 0 2-1.066 2-2.871 0-1.934-.781-2.668-1.953-2.668-.926 0-1.797.672-1.797 1.809 0 1.16.824 1.77 1.676 1.77.746 0 1.23-.376 1.383-.79h.027c-.004 1.316-.461 2.164-1.305 2.164-.664 0-1.008-.45-1.05-.82zm2.953-2.317c0 .696-.559 1.18-1.184 1.18-.601 0-1.144-.383-1.144-1.2 0-.823.582-1.21 1.168-1.21.633 0 1.16.398 1.16 1.23"/>
+              <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z"/>
+            </svg>
+            Calendario
+          </a>
+        </li>
+        <li>
+         <a href="consulta.html">
+	     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+  	     <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+	     </svg>
+         Consulta
+         </a>
+        </li>
+      </ul>
+    </div>
+
+      <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-20">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold mb-6">Descubre Nuestros Apartamentos</h2>
+            <p class="text-xl md:text-2xl mb-8">Vive la experiencia de un hogar moderno y cómodo</p>
+            <div class="bg-white bg-opacity-20 backdrop-blur-sm rounded-lg p-6 max-w-2xl mx-auto">
+                <p class="text-lg">Explora nuestra galería y conoce los diferentes modelos de apartamentos disponibles. Cada espacio ha sido diseñado pensando en tu comodidad y bienestar.</p>
+            </div>
+        </div>
+    </section>
+
+<!-- Filter Section -->
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Nuestra Galería</h2>
+            </div>
+
+                    <!-- Gallery Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="gallery-grid">
+
+                <!-- 1 Dormitorio -->
+                <div class="gallery-item bg-white rounded-xl shadow-md overflow-hidden" data-category="1-dormitorio">
+                    <div class="relative overflow-hidden">
+                        <img src="img/1dormitorios.png" alt="Apartamento 1 dormitorio" class="w-full h-64 object-cover">
+                        <div class="absolute top-4 right-4 bg-green-600 text-white px-3 py-1 rounded-full text-sm">1 Dormitorio</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Classic 1D</h3>
+                        <p class="text-gray-600 mb-4">65m² - Cocina integral</p>
+                        <span class="text-2xl font-bold text-blue-600">$180,000</span>
+                        <button class="view-details bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 mt-2">Ver Detalles</button>
+                    </div>
+                </div>
+
+                <!-- 2 Dormitorios -->
+                <div class="gallery-item bg-white rounded-xl shadow-md overflow-hidden" data-category="2-dormitorios">
+                    <div class="relative overflow-hidden">
+                        <img src="img/2dormitorios.png" alt="Apartamento 2 dormitorios" class="w-full h-64 object-cover">
+                        <div class="absolute top-4 right-4 bg-yellow-600 text-white px-3 py-1 rounded-full text-sm">2 Dormitorios</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Family 2D</h3>
+                        <p class="text-gray-600 mb-4">85m² - 2 Baños</p>
+                        <span class="text-2xl font-bold text-blue-600">$280,000</span>
+                        <button class="view-details bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 mt-2">Ver Detalles</button>
+                    </div>
+                </div>
+
+                <!-- 3 Dormitorios -->
+                <div class="gallery-item bg-white rounded-xl shadow-md overflow-hidden" data-category="3-dormitorios">
+                    <div class="relative overflow-hidden">
+                        <img src="img/3dormitorios.jpeg" alt="Apartamento 3 dormitorios" class="w-full h-64 object-cover">
+                        <div class="absolute top-4 right-4 bg-red-600 text-white px-3 py-1 rounded-full text-sm">3 Dormitorios</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Premium 3D</h3>
+                        <p class="text-gray-600 mb-4">120m² - Terraza y balcón</p>
+                        <span class="text-2xl font-bold text-blue-600">$420,000</span>
+                        <button class="view-details bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 mt-2">Ver Detalles</button>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+   <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-content">
+            <button class="absolute top-4 right-4 text-white text-3xl z-10" id="close-lightbox">
+                <i class="fas fa-times"></i>
+            </button>
+            <img id="lightbox-image" src="" alt="">
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Residencial Alamedas de Santa Ana</h3>
+                    <p class="text-gray-300">Tu hogar ideal en el corazón de la ciudad. Calidad y confort en cada espacio.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Contacto</h3>
+                    <p class="text-gray-300">📞 (123) 456-7890</p>
+                    <p class="text-gray-300">✉️ info@residencialelalamedassantaAna.com</p>
+                    <p class="text-gray-300">📍 Americas Zona 13, Ciudad de Guatemala</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Horario de Visitas</h3>
+                    <p class="text-gray-300">Lunes a Viernes: 9AM - 6PM</p>
+                    <p class="text-gray-300">Sábados: 10AM - 4PM</p>
+                    <p class="text-gray-300">Domingos: Cerrado</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p class="text-gray-300">© 2025 Alamedas de Santa Ana | Todos los derechos reservados</p>
+            </div>
+        </div>
+    </footer>
+   <!-- Scripts -->
+    <script src="js/menu.js"></script>
+    <script src="./vendor/sqljs/sql-wasm.js"></script>
+    <script src="js/db.js"></script>
+    <script src="gallery.js"></script>
+</body>
+</html>
